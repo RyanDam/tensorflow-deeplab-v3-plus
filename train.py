@@ -51,11 +51,11 @@ parser.add_argument('--max_iter', type=int, default=30000,
 parser.add_argument('--data_dir', type=str, default='./dataset/',
                     help='Path to the directory containing the PASCAL VOC data tf record.')
 
-parser.add_argument('--base_architecture', type=str, default='resnet_v2_101',
-                    choices=['resnet_v2_50', 'resnet_v2_101'],
+parser.add_argument('--base_architecture', type=str, default='resnet_v2_light',
+                    choices=['resnet_v2_light', 'resnet_v2_50', 'resnet_v2_101'],
                     help='The architecture of base Resnet building block.')
 
-parser.add_argument('--pre_trained_model', type=str, default='./ini_checkpoints/resnet_v2_101/resnet_v2_101.ckpt',
+parser.add_argument('--pre_trained_model', type=str, default='',
                     help='Path to the pre-trained model checkpoint.')
 
 parser.add_argument('--output_stride', type=int, default=16,
