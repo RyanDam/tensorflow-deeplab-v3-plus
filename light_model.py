@@ -17,9 +17,9 @@ def resnet_v2_light(inputs,
                  scope='resnet_v2_light'):
   """ResNet-light model of AIlab. See resnet_v2() for arg and return description."""
   blocks = [
-      resnet_v2.resnet_v2_block('block1', base_depth=16, num_units=2, stride=2),
-      resnet_v2.resnet_v2_block('block2', base_depth=32, num_units=3, stride=2),
-      resnet_v2.resnet_v2_block('block3', base_depth=64, num_units=3, stride=2),
+      resnet_v2.resnet_v2_block('block1', base_depth=16, num_units=3, stride=2),
+      resnet_v2.resnet_v2_block('block2', base_depth=32, num_units=4, stride=2),
+      resnet_v2.resnet_v2_block('block3', base_depth=64, num_units=8, stride=2),
       resnet_v2.resnet_v2_block('block4', base_depth=128, num_units=3, stride=1),
   ]
 
