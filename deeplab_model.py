@@ -12,6 +12,7 @@ from tensorflow.contrib.framework.python.ops import arg_scope
 from tensorflow.contrib.layers.python.layers import layers
 
 from utils import preprocessing
+from light_model import resnet_v2_light
 
 _BATCH_NORM_DECAY = 0.9997
 _WEIGHT_DECAY = 5e-4
@@ -97,10 +98,12 @@ def deeplab_v3_plus_generator(num_classes,
   if batch_norm_decay is None:
     batch_norm_decay = _BATCH_NORM_DECAY
 
-  if base_architecture not in ['resnet_v2_50', 'resnet_v2_101']:
-    raise ValueError("'base_architrecture' must be either 'resnet_v2_50' or 'resnet_v2_101'.")
+  if base_architecture not in ['resnet_v2_light', 'resnet_v2_50', 'resnet_v2_101']:
+    raise ValueError("'base_architrecture' must be either 'resnet_v2_light', 'resnet_v2_50' or 'resnet_v2_101'.")
 
-  if base_architecture == 'resnet_v2_50':
+  if base_architecture == 'resnet_v2_light':
+    base_model = resnet_v2_light
+  elif base_architecture == 'resnet_v2_50':
     base_model = resnet_v2.resnet_v2_50
   else:
     base_model = resnet_v2.resnet_v2_101
