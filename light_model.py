@@ -25,7 +25,7 @@ def resnet_v2_light(inputs,
 
   return resnet_v2.resnet_v2(inputs, blocks, num_classes, is_training=is_training,
                    global_pool=global_pool, output_stride=output_stride,
-                   include_root_block=True, spatial_squeeze=spatial_squeeze,
+                   include_root_block=True,
                    reuse=reuse, scope=scope)
 
 resnet_v2_light.default_image_size = resnet_v2.resnet_v2.default_image_size
