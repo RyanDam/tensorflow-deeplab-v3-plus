@@ -124,6 +124,7 @@ def deeplab_v3_plus_generator(num_classes,
                                       is_training=is_training,
                                       global_pool=False,
                                       output_stride=output_stride)
+      print(end_points)
 
     if is_training:
       exclude = [base_architecture + '/logits', 'global_step']
